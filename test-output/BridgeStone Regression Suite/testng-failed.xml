@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" verbose="4" name="Failed suite [BridgeStone Regression Suite]" parallel="tests">
+  <test thread-count="1" verbose="4" name="homePage tire1(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.tireproject.tests.test">
+        <methods>
+          <include name="getSizeResult_test"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tireproject.tests.test -->
+    </classes>
+  </test> <!-- homePage tire1(failed) -->
+</suite> <!-- Failed suite [BridgeStone Regression Suite] -->

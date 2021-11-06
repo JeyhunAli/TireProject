@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="BridgeStone Regression Suite" thread-count="1"
+	parallel="tests" verbose="4">
+
+
+	<test name="homePage tire1">
+		<parameter name="browser" value="chrome" />
+
+		<classes>
+			<class name="com.tireproject.tests.test" />
+		</classes>
+	</test>
+	
+	
+</suite>
