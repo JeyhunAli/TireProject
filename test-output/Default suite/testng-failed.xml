@@ -5,11 +5,8 @@
     <classes>
       <class name="com.tireproject.tests.test">
         <methods>
-          <include name="getSizeResult_3"/>
           <include name="getSizeResult_test"/>
           <include name="setUp"/>
-          <include name="getSizeResult_2"/>
-          <include name="maintest"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.tireproject.tests.test -->

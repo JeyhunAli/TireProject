@@ -20,6 +20,8 @@ public class BaseTest {
 	@Parameters({"browser"})
 	@BeforeTest
 	public void setUp(String browser) {
+		
+		
 		bd = new BaseDriver();
 		property = bd.start_properties();
 

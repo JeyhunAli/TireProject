@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 
@@ -29,7 +28,7 @@ public class BaseDriver {
 	public WebDriver driver;
 	public Properties property;
 	public WebDriverWait wait;
-	public OptionsManager optionsmanager;
+	
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	
@@ -43,30 +42,29 @@ public class BaseDriver {
 	 //Constructor
 //    public BaseDriver(WebDriver driver) {
 //        this.driver = driver;
-//        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        
 //       
 //    }
 	
 	public WebDriver start_driver(Properties property) {
 		
-		String browsername = property.getProperty("browser").trim();
-		System.out.println("browser name is: " + browsername);
+		String browserName = property.getProperty("browser").trim();
+		System.out.println("browser name is: " + browserName);
+	
 		
-		optionsmanager = new OptionsManager();
-		
-		if(browsername.equalsIgnoreCase("chrome")) {
+		if(browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver(OptionsManager.getChromeOptions()));
 		}
-		else if(browsername.equalsIgnoreCase("firefox")) {
+		else if(browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver(OptionsManager.getFirefoxOptions()));
 		}
-		else if(browsername.equalsIgnoreCase("safari")) {
+		else if(browserName.equalsIgnoreCase("safari")) {
 			tlDriver.set(new SafariDriver());
 		}
 		else {
-			System.out.println("plz pass correct browser.... " + browsername);
+			System.out.println("plz pass correct browser.... " + browserName);
 		}
 		
 		getDriver().manage().deleteAllCookies();
